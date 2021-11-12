@@ -55,7 +55,7 @@ public class PlacementManager : MonoBehaviour
         //ì‹Æ‘ä‚ğ¶¬
         for (int i = 0; i < TableNo; i++)
         {
-            Vector3 pos = UnityEngine.Random.insideUnitCircle * 6;
+            Vector3 pos = UnityEngine.Random.insideUnitCircle * 2;
             pos.z = pos.y;
             pos.y = TableSize.y;
 

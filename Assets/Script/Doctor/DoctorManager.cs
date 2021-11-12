@@ -145,7 +145,7 @@ public class DoctorManager : MonoBehaviour
 		{
 			var direction = new Vector3(Horizontal, 0, Vertical);
 			transform.localRotation = Quaternion.LookRotation(direction);
-		}
+        }
 	}
 
 	//ƒp[ƒc‚ğ’Í‚Şˆ—
