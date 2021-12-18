@@ -58,21 +58,11 @@ public class Ball : MonoBehaviour
             Instantiate(this.gameObject, transform.position, Quaternion.identity);
             istrue = false;
         }
-
-        if(DestroyTime <= 0)
-        {
-            transform.localScale = new Vector3(transform.localScale.x - DestoryScale, transform.localScale.y - DestoryScale, transform.localScale.z - DestoryScale);
-        }
-        if (transform.localScale.x <= 0)
-        {
-            Zyamama.GetComponent<Jamma>().Shot = false;
-            Destroy(this.gameObject);
-        }
-
     }
 
     void FixedUpdate()
     {
+        DeleteBall();
     }
 
     // Update is called once per frame
@@ -157,6 +147,19 @@ public class Ball : MonoBehaviour
         {
             //消滅までのカウントダウン
             DestroyTime -= Time.deltaTime;
+        }
+    }
+
+    void DeleteBall()
+    {
+        if (DestroyTime <= 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x - DestoryScale, transform.localScale.y - DestoryScale, transform.localScale.z - DestoryScale);
+        }
+        if (transform.localScale.x <= 0)
+        {
+            Zyamama.GetComponent<Jamma>().Shot = false;
+            Destroy(this.gameObject);
         }
     }
 }
